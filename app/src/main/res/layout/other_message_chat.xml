@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/otherUserLiner"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:paddingBottom="20dp">
+
+    <LinearLayout
+        android:layout_width="226dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtotherTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="12:38"
+            android:textAlignment="textStart"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/txtotherSMS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:text="Hellooo!, ¿Cómo han estado?"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/txtothername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+    </LinearLayout>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/viewHoter"
+        android:layout_width="71dp"
+        android:layout_height="65dp"
+        android:src="@drawable/ic_launcher_background"
+        apps:civ_border_color="#FF000000"
+        apps:civ_border_width="2dp"
+        apps:layout_constraintEnd_toStartOf="@+id/txtMyMessage"
+        apps:layout_constraintHorizontal_bias="1.0"
+        apps:layout_constraintStart_toStartOf="parent"
+        apps:layout_constraintTop_toTopOf="parent" />
+
+
+</LinearLayout>

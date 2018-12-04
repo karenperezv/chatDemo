@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ChatSocketIO</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_chat_room_with_user">ChatRoomWithUserActivity</string>
+    <string name="title_activity_list_users">ListUsersActivity</string>
+    <string name="title_activity_recycler_chat_leidos">recycler_chat_leidos</string>
+</resources>
