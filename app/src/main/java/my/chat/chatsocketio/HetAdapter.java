@@ -16,6 +16,9 @@ public class HetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     private final int ITEM1 = 1;
     private final int ITEM2 = 2;
+    private final int ITEM3 = 3;//myImage
+    private final int ITEM4 = 4;//Other Image
+
 
     private List<Item> items = new ArrayList<>();
 
@@ -31,6 +34,10 @@ public class HetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             case ITEM1: viewHolder = new Item1Holder(inflater.inflate(R.layout.my_message_chat,parent,false));
                 break;
             case ITEM2: viewHolder = new Item2Holder(inflater.inflate(R.layout.other_message_chat,parent,false));
+                break;
+            case ITEM3: viewHolder = new Item3Holder(inflater.inflate(R.layout.my_image_chat,parent,false));
+                break;
+            case ITEM4: viewHolder = new Item4Holder(inflater.inflate(R.layout.other_image_chat,parent,false));
                 break;
             default: viewHolder = new Item1Holder(inflater.inflate(R.layout.my_message_chat,parent));
         }
@@ -51,11 +58,25 @@ public class HetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             case ITEM2:
                 Item2 item2 = (Item2) items.get(position);
                 Item2Holder item2Holder = (Item2Holder)holder;
-               // item2Holder.imgPhoto.setImageResource(item2.getFoto());
+                // item2Holder.imgPhoto.setImageResource(item2.getFoto());
                 Picasso.get().load(item2.getFoto()).into(item2Holder.imgPhoto);
                 item2Holder.tvNombre.setText(item2.getUsername2());
                 item2Holder.tvHora.setText(item2.getHora());
                 item2Holder.tvMsg.setText(item2.getMsg());
+                break;
+            case ITEM3:
+                myImage myImage = (myImage) items.get(position);
+                Item3Holder item3Holder = (Item3Holder) holder;
+                // item2Holder.imgPhoto.setImageResource(item2.getFoto());
+                Picasso.get().load(myImage.getImage()).into(item3Holder.myImage);
+                item3Holder.myImageDate.setText(myImage.getDataImage());
+                break;
+            case ITEM4:
+                otherImage otherImage = (otherImage) items.get(position);
+                Item4Holder item4Holder = (Item4Holder)holder;
+                // item2Holder.imgPhoto.setImageResource(item2.getFoto());
+                Picasso.get().load(otherImage.getOtherImage()).into(item4Holder.otherImage);
+                item4Holder.otherImageDate.setText(otherImage.getDateOtherImage());
                 break;
         }
 
@@ -96,4 +117,26 @@ public class HetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             tvMsg=(TextView) itemView.findViewById(R.id.txtotherSMS);
         }
     }
+
+
+
+    class Item3Holder extends RecyclerView.ViewHolder{
+        ImageView myImage;
+        TextView myImageDate;
+        public Item3Holder(View itemView) {
+            super(itemView);
+            myImage = (ImageView) itemView.findViewById(R.id.otherImageChat);
+            myImageDate =(TextView) itemView.findViewById(R.id.imageMyChatDate);
+        }
+    }
+    class Item4Holder extends RecyclerView.ViewHolder{
+        ImageView otherImage;
+        TextView otherImageDate;
+        public Item4Holder(View itemView) {
+            super(itemView);
+            otherImage =(ImageView) itemView.findViewById(R.id.otherImageChat);
+            otherImageDate = (TextView) itemView.findViewById(R.id.otherImageChatDate);
+        }
+    }
+
 }

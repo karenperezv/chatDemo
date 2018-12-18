@@ -1,10 +1,9 @@
 package my.chat.chatsocketio;
 
-import android.net.Uri;
-
 public interface Item {
     int getViewType();
 }
+
 class Item1 implements Item {
     String mensaje;
     String hora;
@@ -45,6 +44,7 @@ class Item1 implements Item {
         return 1;
     }
 }
+
 class Item2 implements Item {
     String username;
     String username2;
@@ -104,4 +104,67 @@ class Item2 implements Item {
     public int getViewType() {
         return 2;
     }
+}
+
+class myImage implements Item {
+    String image;
+    String dataImage;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getDataImage() {
+        return dataImage;
+    }
+
+    public void setDataImage(String dataImage) {
+        this.dataImage = dataImage;
+    }
+
+    public myImage(String image, String dataImage) {
+        this.image = image;
+        this.dataImage = dataImage;
+    }
+
+    @Override
+    public int getViewType() {
+        return 3;
+    }
+}
+
+class otherImage implements Item {
+    String otherImage;
+    String dateOtherImage;
+
+    public otherImage(String otherImage, String dateOtherImage) {
+        this.otherImage = otherImage;
+        this.dateOtherImage = dateOtherImage;
+    }
+
+    public String getOtherImage() {
+        return otherImage;
+    }
+
+    public void setOtherImage(String otherImage) {
+        this.otherImage = otherImage;
+    }
+
+    public String getDateOtherImage() {
+        return dateOtherImage;
+    }
+
+    public void setDateOtherImage(String dateOtherImage) {
+        this.dateOtherImage = dateOtherImage;
+    }
+
+    @Override
+    public int getViewType() {
+        return 4;
+    }
+
 }

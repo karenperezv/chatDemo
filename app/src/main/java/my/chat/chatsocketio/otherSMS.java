@@ -1,8 +1,6 @@
 package my.chat.chatsocketio;
 
 
-import org.json.JSONArray;
-
 public class otherSMS {
     private static String var0;
     private static String var1;

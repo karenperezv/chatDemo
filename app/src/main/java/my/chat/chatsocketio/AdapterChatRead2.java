@@ -1,5 +1,4 @@
 package my.chat.chatsocketio;
-
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -10,32 +9,32 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHolder>{
+public class AdapterChatRead2 extends RecyclerView.Adapter<AdapterChatRead2.ViewHolder>{
 
-    private ArrayList<chatExistente2> data;
+    private ArrayList<DataChatRead2> data;
 
-    public MessageAdapter(ArrayList<chatExistente2> data) {
+    public  AdapterChatRead2(ArrayList<DataChatRead2> data) {
         this.data = data;
     }
 
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public AdapterChatRead2.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         return new
-         ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.recycler_chat_message, viewGroup, false));
+                ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.recycler_chat_read, viewGroup, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        chatExistente2 obj = data.get(i);
+        DataChatRead2 obj = data.get(i);
         viewHolder.user2.setText(obj.getUser2());
-        viewHolder.msg.setText(obj.getMessage());
+        viewHolder.msg.setText(obj.getMensaje());
     }
 
     @Override
     public int getItemCount() {
-       return data.size();
+        return data.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
@@ -45,8 +44,8 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
         public ViewHolder(final View itemView) {
             super(itemView);
-            user2 = (TextView) itemView.findViewById(R.id.txtUser2ChatExistente);
-            msg = (TextView) itemView.findViewById(R.id.txtMessageChatExistente);
+            user2 = (TextView) itemView.findViewById(R.id.txtUserLeido);
+            msg = (TextView) itemView.findViewById(R.id.txtChatLeido);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

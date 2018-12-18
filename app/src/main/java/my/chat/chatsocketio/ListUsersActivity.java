@@ -5,18 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
-import org.apache.commons.codec.binary.Hex;
-import org.apache.commons.codec.digest.DigestUtils;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
 
 public class ListUsersActivity extends AppCompatActivity {
 ImageView regresar;
@@ -57,24 +49,12 @@ ImageView regresar;
     private ArrayList<DataList> dataSet()
     {
         data.add(contador,new DataList("Jonny",imgUser));
-        data.add(contador,new DataList("Luis",imgUser));
-        data.add(contador,new DataList("Karen",imgUser));
+        data.add(contador,new DataList("Pepe",imgUser));
+        data.add(contador,new DataList("Maria",imgUser));
+        data.add(contador,new DataList("Miquel",imgUser));
+        data.add(contador,new DataList("PAloma",imgUser));
         return  data;
     }
+    
 
-
-    private String hashConversacion(){
-        String user1="zAdrian";
-        String user2="Victor";
-        ArrayList<String> contactos = new ArrayList<>();
-        contactos.add(user1);
-        contactos.add(user2);
-        Collections.sort(contactos);
-        String concat =contactos.get(0)+contactos.get(1);
-        Log.e("COncatenacion",concat);
-        String string = "demo";
-        String hash = new String(Hex.encodeHex(DigestUtils.md5(concat)));
-        Log.e("hash",hash);
-        return hash;
-    }
 }
